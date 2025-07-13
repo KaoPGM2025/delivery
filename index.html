@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แอปประเมินลูกค้า (สำหรับพนักงาน)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ แอปประเมินลูกค้า ✨</h1>
+
+        <section id="evaluation-section">
+            <h2>ประเมินลูกค้าวันนี้</h2>
+            <form id="evaluationForm">
+                <div class="form-group">
+                    <label for="customerId">รหัสลูกค้า/ชื่อเล่น:</label>
+                    <input type="text" id="customerId" required placeholder="เช่น L001 / คุณสมศรี">
+                </div>
+
+                <div class="form-group">
+                    <label>ความพึงพอใจ (คะแนน 1-5):</label>
+                    <div class="rating-control">
+                        <button type="button" id="decreaseRating">-</button>
+                        <input type="number" id="rating" name="rating" value="3" min="1" max="5" required readonly>
+                        <button type="button" id="increaseRating">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">ข้อเสนอแนะ/เหตุผล (ถ้ามี):</label>
+                    <textarea id="feedback" rows="3" placeholder="เช่น ลูกค้าให้ทิปเยอะ / ลูกค้ารอนานเพราะที่อยู่ผิด"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">บันทึกการประเมิน</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="insights-section">
+            <h2>📊 ข้อมูลเชิงลึกการประเมิน</h2>
+            <div id="insightsSummary">
+                <p>ยังไม่มีข้อมูลการประเมิน</p>
+            </div>
+            <button class="btn-reset" id="clearDataBtn">ล้างข้อมูลทั้งหมด</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
